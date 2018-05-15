@@ -1,29 +1,17 @@
-# Filiday-m
-[![Build Status](https://travis-ci.org/javaLuo/react-luo.svg?branch=master)](https://travis-ci.org/javaLuo/react-luo)
-[![codebeat badge](https://codebeat.co/badges/eb91ca34-7c1b-424f-be1c-a5d79fd3d269)](https://codebeat.co/projects/github-com-javaluo-react-luo-master)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+# react-bucket
 
 ## what is this?
-react automaticaly<br/>
-这是一个React脚手架，没有使用create-react-app<br/>
+react全家桶，简单易用，webpack4搭建<br/>
+这是一个React脚手架，集成多页与单页应用，全能脚手架<br/>
 标准的React+Redux分层结构<br/>
 经过了多个项目的实践，不停的更新和优化出来的。目前自己做项目也在用。
 
 * PWA、代码分割、HMR热替换、dllPlugin静态资源预编译、HappyPack多线程构建、ES6+语法
 
-## 构建 Start
+## 构建架构
 
 ```
 npm install		# 安装依赖模块
-```
-
-```
-npm run dll		# 静态资源预编译
-```
-
-```
-npm run start		# 运行开发环境，默认监听8888端口
 ```
 
 ```
@@ -31,38 +19,9 @@ npm run build		# 正式打包，用于生产环境
 ```
 
 ```
-npm run prettier	# 自动格式化src、mock目录下的所有.js/.css/.scss/.less文件
+npm run dev	# 开发环境，启动服务
 ```
 
-```
-npm run dist		# 运行正式打包后的最终文件（build目录下的文件），默认监听8888端口
-```
-
-## Yarn构建
-
-```
-yarn install		# 安装依赖模块
-```
-
-```
-yarn run dll		# 静态资源预编译
-```
-
-```
-yarn run start		# 运行开发环境，默认监听8888端口
-```
-
-```
-yarn run build		# 正式打包，用于生产环境
-```
-
-```
-yarn run prettier	# 自动格式化src、mock目录下的所有.js/.css/.scss/.less文件
-```
-
-```
-yarn run dist		# 运行正式打包后的最终文件（build目录下的文件），默认监听8888端口
-```
 
 ## 更新日志 Update log
 * 2018-04-26

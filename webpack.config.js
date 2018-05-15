@@ -58,7 +58,7 @@ let config = {
     new TransferWebpackPlugin([{from: 'images',to: './images'}], path.resolve(__dirname,"src")),
     new CopyWebpackPlugin([
       {from: './src/images/favicon.ico',to: './' },
-      {from: './src/constants/ypConfig.js',to: './' }
+      {from: './src/config.js',to: './' }
     ]),
     new webpack.DefinePlugin({
       "process.env": {
