@@ -1,0 +1,28 @@
+/**
+ * Created by yangpu on 2016/9/18.
+ */
+
+//环境安装方法
+1.npm install //加载依赖模块
+2.npm run build //打包没有压缩，开发环境与第一次安装才用,未压缩
+3.npm run dev  //开启http服务与热更新,开发环境并调试才用,未压缩
+4.npm run dist  //发布生产环境才能,压缩并打包
+
+访问地址：http://ip:8080/  或者  http://localhost:8080/
+建议利用本机ip地址访问 方便手机调试 要在同一局域网络内
+
+
+
+
+//测试redux环境
+http://localhost:8080/template/test/
+
+
+console.log(tool.getUserAgent()+'===========')
+
+tool.save('user',{LoginStatus:true})
+console.log(tool.get('user').LoginStatus+'-----------')
+tool.del('user');
+console.log(tool.get('user')+'++++++++++++++')
+
+console.log('登录状态:'+tool.hasLogin())
