@@ -7,6 +7,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 抽离css
 
 const PUBLIC_PATH = "/"; // 基础路径
 
+// 模板定义与模板配置 PageName：文件夹名称，title：模板标题
+let templateArr = [
+  { PageName: "index", title: "", app: "indexApp" },
+  { PageName: "page1", title: "", app: "page1/page1App" },
+  { PageName: "page2", title: "", app: "page2/page1App" }
+];
+
 // 定义函数判断是否是在当前生产环境，这个很重要，开发环境和生产环境配置上有一些区别
 let config = {
   entry: {
@@ -29,6 +36,7 @@ let config = {
       },
       {
         test: /\.jsx?$/, // 用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
+        exclude: /node_modules/,
         loader: "babel-loader",
         query: {
           presets: ["es2015", "react"]
@@ -46,7 +54,7 @@ let config = {
   },
   devServer: {
     disableHostCheck: true,
-    open:true
+    historyApiFallback: true
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -72,13 +80,6 @@ let config = {
     })
   ]
 };
-
-// 模板定义与模板配置 PageName：文件夹名称，title：模板标题
-let templateArr = [
-  { PageName: "index", title: "", app: "indexApp" },
-  { PageName: "page1", title: "", app: "page1/page1App" },
-  { PageName: "page2", title: "", app: "page2/page1App" }
-];
 
 templateArr.map(
   templateJson => {
