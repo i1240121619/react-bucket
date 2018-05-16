@@ -3,12 +3,16 @@ import "../css/assembly.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 // import P from "prop-types";
 // import createHistory from 'history/createBrowserHistory';
 import createHistory from "history/createHashHistory";
 import Loadable from "react-loadable";
 import Loading from "../components/loading/Loading";
+
+/** 数据中心 **/
+import store from "../store";
 
 const Index = Loadable({
   loader: () => import("../containers/Index"),
@@ -43,7 +47,6 @@ class App extends React.Component {
     Loadable.preloadAll();
   }
 
-  /** 权限控制 **/
   onEnter(Component, props) {
     console.log("权限控制：", props);
     // 例子：如果没有登录，直接跳转至login页
@@ -62,14 +65,18 @@ class App extends React.Component {
           render={() => {
             return (
               <Switch>
-                <Route path="/" render={props => this.onEnter(Index, props)} />
+                <Redirect exact from="/" to="/index" />
                 <Route
-                  path="/features"
-                  render={props => this.onEnter(Features, props)}
+                  path="/index"
+                  render={props => this.onEnter(Index, props)}
                 />
                 <Route
-                  path="/test"
-                  render={props => this.onEnter(Test, props)}
+                  path="/page1"
+                  render={props => this.onEnter(Page1, props)}
+                />
+                <Route
+                  path="/page2"
+                  render={props => this.onEnter(Page2, props)}
                 />
                 <Route component={NotFound} />
               </Switch>
@@ -80,4 +87,9 @@ class App extends React.Component {
     );
   }
 }
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("app")
+);
