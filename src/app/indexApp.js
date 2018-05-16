@@ -1,5 +1,4 @@
-import "../css/special.css";
-import "../css/assembly.css";
+import "../css/public.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -9,26 +8,26 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 // import createHistory from 'history/createBrowserHistory';
 import createHistory from "history/createHashHistory";
 import Loadable from "react-loadable";
-import Loading from "../components/loading/Loading";
+import Loading from "../components/loading/loading.js";
 
 /** 数据中心 **/
 import store from "../store";
 
 const Index = Loadable({
-  loader: () => import("../containers/Index"),
+  loader: () => import("../containers/index/index"),
   loading: Loading,
   timeout: 10000
 });
 const Page1 = Loadable({
-  loader: () => import("../containers/Page1"),
+  loader: () => import("../containers/page1/page1"),
   loading: Loading
 });
 const Page2 = Loadable({
-  loader: () => import("../containers/Page2"),
+  loader: () => import("../containers/page2/page2"),
   loading: Loading
 });
 const NotFound = Loadable({
-  loader: () => import("../containers/NotFound"),
+  loader: () => import("../containers/notfound/notfound"),
   loading: Loading
 });
 

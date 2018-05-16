@@ -1,12 +1,10 @@
 /** 导航 **/
 
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./index.css";
+import { Link } from "react-router-dom";
+import "./menu.css";
 
 export default class Menu extends React.PureComponent {
-  static propTypes = {};
-
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,17 +13,22 @@ export default class Menu extends React.PureComponent {
   render() {
     return (
       <div className="menu">
-        <NavLink to="/index">首页</NavLink>|
-        <NavLink to="/page1">构建与特性</NavLink>|
-        <NavLink
+        <Link to="/index" replace>
+          首页
+        </Link>|
+        <Link to="/page1" replace>
+          构建与特性
+        </Link>|
+        <Link
           to={{
             pathname: "/page2",
             search: "?a=123&b=abc",
             state: { c: "456", d: "ABC" }
           }}
+          replace
         >
           测试页面
-        </NavLink>|
+        </Link>|
         <a
           href="https://github.com/i1240121619/react-bucket"
           target="_blank"

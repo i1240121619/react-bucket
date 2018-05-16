@@ -1,9 +1,8 @@
-import "../css/special.css";
-import "../css/assembly.css";
+import "../css/public.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import Page2 from "../containers/Page2";
+import Page2 from "../containers/page2/page2";
 
 class App extends React.Component {
   constructor() {

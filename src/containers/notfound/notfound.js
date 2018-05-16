@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Index extends React.Component {
+export default class Notfound extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ export default class Index extends React.Component {
     return (
       <div className="mainInAll">
         <div className={this.state.LoadingState ? "main mainIn" : "main"}>
-          Index123
+          NotFound
         </div>
       </div>
     );

@@ -1,0 +1,155 @@
+@charset "utf-8";
+@import url(tool.css);
+*{ margin:0; padding:0}
+html,body{height:100%;}
+html {
+	font-size: 14px
+}
+@font-face {
+	font-family: "iconfont";
+	src: url(../fonts/iconfont.ttf) format('truetype'), url(../fonts/iconfont.woff) format('woff'), url(../fonts/iconfont.svg#iconfont) format('svg')
+}
+
+[class*=yf_],
+[class^=yf_]:before {
+	min-width: 5px;
+	min-height: 5px;
+	font-family: iconfont !important;
+	display: inline-block;
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+textarea {
+	overflow: auto
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 0;
+	box-shadow: none
+}
+
+:focus * {
+	outline: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	-webkit-appearance: button;
+	box-shadow: none;
+	border: 0;
+	cursor: pointer
+}
+
+input[type=number]::-webkit-inner-spin-button {
+	visibility: hidden
+}
+
+input {
+	border: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse
+}
+
+td,
+th {
+	padding: 0
+}
+
+@media screen and (min-width:320px) {
+	html {
+		font-size: 20.2px
+	}
+}
+
+@media screen and (min-width:400px) {
+	html {
+		font-size: 21px
+	}
+}
+
+@media screen and (min-width:540px) {
+	html {
+		font-size: 21.6px
+	}
+}
+a{ text-decoration:none}
+img,.h5Video{vertical-align:bottom;}
+.mainIn {
+	-webkit-animation: mainIn .5s .1s ease both
+}
+
+@keyframes mainIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes mainIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+#app {
+	height: 100%;
+	background: url('../images/load.gif') no-repeat center center;
+	background-attachment: fixed;
+	background-size: 20px
+}
+
+#app div[data-reactroot] {
+	height: 100%
+}
+
+.mainInAll {
+	height: 100%
+}
+.main {
+	min-height: 100%;
+	background: #ffffff;
+	opacity: 0;
+}
+*{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ul,li{
+	list-style: none;
+}
+
+.c{ clear:both}
+.floatleft{ float:left}
+.floatright{ float:right}
+
