@@ -3,17 +3,17 @@ import "../css/assembly.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import Index from "../containers/Index";
+import Page2 from "../containers/Page2";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   render() {
     return (
       <div>
-        <Index />
+        <Page2 />
       </div>
     );
   }
