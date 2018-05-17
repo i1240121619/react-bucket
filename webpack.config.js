@@ -91,8 +91,7 @@ let config = {
     ]
   },
   devServer: {
-    disableHostCheck: true,
-    historyApiFallback: true
+    disableHostCheck: true
   },
   resolve: {
     extensions: [".js", ".jsx"],
