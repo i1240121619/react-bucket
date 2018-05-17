@@ -19,7 +19,7 @@ npm run build		# 正式打包，用于生产环境
 ```
 
 ```
-npm run dev	        # 开发环境，启动服务
+npm run dev		    # 开发环境，启动服务
 ```
 
 
