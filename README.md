@@ -41,26 +41,26 @@ npm run dev	        # 开发环境，启动服务
 
 ```
 .
-├── build                       # 正式打包后，会自动生成该文件夹，其中会包含最终用于生产环境的文件
-├── mock                       # mock测试数据
-├── src                       # 项目代码目录
-│   ├── app                       # 多入口
-│   ├── action                       # 所有的action
-│   ├── component                       # 所有的公共类UI组件
-│   ├── container                       # 所有的页面级容器组件
+├── build                          # 正式打包后，会自动生成该文件夹，其中会包含最终用于生产环境的文件
+├── mock                           # mock测试数据
+├── src                            # 项目代码目录
+│   ├── app                        # 多入口
+│   ├── action                     # 所有的action
+│   ├── component                  # 所有的公共类UI组件
+│   ├── container                  # 所有的页面级容器组件
 |	├── ...
-|   	└── root                       # 根页，里面配置了顶级的路由
-│   ├── reducer                       # 所有的reducer
-│   ├── assets                       # 所有的图片、文件等静态资源
-│   ├── styles                       # 所有的样式文件
-│   ├── store                       # store数据中心
+|   	└── root                   # 根页，里面配置了顶级的路由
+│   ├── reducer                    # 所有的reducer
+│   ├── assets                     # 所有的图片、文件等静态资源
+│   ├── styles                     # 所有的样式文件
+│   ├── store                      # store数据中心
 │   ├── tool                       # 自定义工具
-│   ├── template                       # 多页应用人口模板
-│   └── config.js                       # 配置文件
-├── server.js                       # 用于开发环境的服务部署
-├── webpack.dev.config.js                       # 用于开发环境的webpack配置
-├── webpack.dll.config.js                       # 静态资源预编译所需webpack配置
-└── webpack.production.config.js                       # 用于生产环境正式打包的webpack配置
+│   ├── template                   # 多页应用人口模板
+│   └── config.js                  # 配置文件
+├── server.js                      # 用于开发环境的服务部署
+├── webpack.dev.config.js          # 用于开发环境的webpack配置
+├── webpack.dll.config.js          # 静态资源预编译所需webpack配置
+└── webpack.production.config.js   # 用于生产环境正式打包的webpack配置
 ```
 
 ## 参阅资料
