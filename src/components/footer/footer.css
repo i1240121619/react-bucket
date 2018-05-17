@@ -2,6 +2,6 @@
   text-align: center;
   padding: 5px 0;
 }
-a:hover {
+.footer a:hover {
   text-decoration: underline;
 }

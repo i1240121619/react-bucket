@@ -1,13 +1,14 @@
-import "../css/public.css";
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-// import P from "prop-types";
+import P from "prop-types";
 // import createHistory from 'history/createBrowserHistory';
 import createHistory from "history/createHashHistory";
 import Loadable from "react-loadable";
+
+import "../css/public.css";
+
 import Loading from "../components/loading/loading.js";
 
 /** 数据中心 **/
@@ -18,12 +19,12 @@ const Index = Loadable({
   loading: Loading,
   timeout: 10000
 });
-const Page1 = Loadable({
-  loader: () => import("../containers/page1/page1"),
+const Features = Loadable({
+  loader: () => import("../containers/features/features"),
   loading: Loading
 });
-const Page2 = Loadable({
-  loader: () => import("../containers/page2/page2"),
+const Test = Loadable({
+  loader: () => import("../containers/test/test"),
   loading: Loading
 });
 const NotFound = Loadable({
@@ -34,6 +35,11 @@ const NotFound = Loadable({
 const history = createHistory();
 
 class App extends React.Component {
+  static propTypes = {
+    dispatch: P.func,
+    children: P.any
+  };
+
   constructor(props) {
     super(props);
   }
@@ -70,12 +76,12 @@ class App extends React.Component {
                   render={props => this.onEnter(Index, props)}
                 />
                 <Route
-                  path="/page1"
-                  render={props => this.onEnter(Page1, props)}
+                  path="/features"
+                  render={props => this.onEnter(Features, props)}
                 />
                 <Route
-                  path="/page2"
-                  render={props => this.onEnter(Page2, props)}
+                  path="/test"
+                  render={props => this.onEnter(Test, props)}
                 />
                 <Route component={NotFound} />
               </Switch>

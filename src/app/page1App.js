@@ -10,11 +10,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Page1 />
-      </div>
-    );
+    return <Page1 />;
   }
 }
 ReactDOM.render(<App />, document.getElementById("app"));

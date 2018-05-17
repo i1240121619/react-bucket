@@ -1,9 +1,17 @@
 import React from "react";
+import P from "prop-types";
+
 import Menu from "../../components/menu/menu";
 
 import "./index.css";
 
 export default class Index extends React.Component {
+  static propTypes = {
+    location: P.any,
+    history: P.any,
+    actions: P.any
+  };
+
   constructor(props) {
     super(props);
     this.state = {

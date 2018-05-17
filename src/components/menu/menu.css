@@ -6,11 +6,11 @@
 .active {
   color: #67daf9;
 }
-a {
+.menu a {
   padding: 0 5px;
   color: #0066cc;
   text-decoration: none;
 }
-a:hover {
+.menu a:hover {
    text-decoration: underline;
 }

@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); // 生成html模块
 const TransferWebpackPlugin = require("transfer-webpack-plugin"); // 复制文件夹到build目录模块
 const CopyWebpackPlugin = require("copy-webpack-plugin"); // 复制文件到build目录模块
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 抽离css
+const HappyPack = require("happypack"); // 多线程编译
 
 const PUBLIC_PATH = "/"; // 基础路径
 
@@ -11,7 +12,7 @@ const PUBLIC_PATH = "/"; // 基础路径
 let templateArr = [
   { PageName: "index", title: "", app: "indexApp" },
   { PageName: "page1", title: "", app: "page1/page1App" },
-  { PageName: "page2", title: "", app: "page2/page1App" }
+  { PageName: "page2", title: "", app: "page2/page2App" }
 ];
 
 // 定义函数判断是否是在当前生产环境，这个很重要，开发环境和生产环境配置上有一些区别
@@ -37,10 +38,8 @@ let config = {
       {
         test: /\.jsx?$/, // 用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
         exclude: /node_modules/,
-        loader: "babel-loader",
-        query: {
-          presets: ["es2015", "react"]
-        }
+        use: ["happypack/loader"],
+        include: path.resolve(__dirname, "src")
       },
       {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf).*$/,
@@ -49,6 +48,45 @@ let config = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
+      {
+        // .less 解析 (用于解析antd的LESS文件)
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "postcss-loader", `less-loader`],
+        include: path.resolve(__dirname, "node_modules")
+      },
+      {
+        // .less 解析
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[local]_[hash:base64:5]"
+            }
+          },
+          "postcss-loader",
+          "less-loader"
+        ],
+        include: path.resolve(__dirname, "src")
+      },
+      {
+        // .scss 解析
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[local]_[hash:base64:5]"
+            }
+          },
+          "postcss-loader",
+          "sass-loader"
+        ]
       }
     ]
   },
@@ -63,6 +101,9 @@ let config = {
     }
   },
   plugins: [
+    new HappyPack({
+      loaders: ["babel-loader"]
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:8].css",
       chunkFilename: "[id].css"
