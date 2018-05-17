@@ -11,15 +11,15 @@ react全家桶，简单易用，webpack4搭建<br/>
 ## 构建架构
 
 ```
-npm install		    # 安装依赖模块
+npm install		# 安装依赖模块
 ```
 
 ```
-npm run build		# 正式打包，用于生产环境
+npm run build	# 正式打包，用于生产环境
 ```
 
 ```
-npm run dev		    # 开发环境，启动服务
+npm run dev		# 开发环境，启动服务
 ```
 
 
