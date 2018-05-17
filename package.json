@@ -1,5 +1,5 @@
 {
-  "name": "rui",
+  "name": "react-bucket",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -61,5 +61,5 @@
     "webpack-dev-server": "^3.1.4"
   },
   "main": "webpack.config.js",
-  "description": ""
+  "description": "这是一个React脚手架，集成多页与单页应用，全能脚手架"
 }
