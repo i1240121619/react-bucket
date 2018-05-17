@@ -15,7 +15,7 @@ npm install		# 安装依赖模块
 ```
 
 ```
-npm run build	# 正式打包，用于生产环境
+npm run build		# 正式打包，用于生产环境
 ```
 
 ```
