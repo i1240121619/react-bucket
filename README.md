@@ -57,10 +57,7 @@ npm run dev	        # 开发环境，启动服务
 │   ├── tool                       # 自定义工具
 │   ├── template                   # 多页应用人口模板
 │   └── config.js                  # 配置文件
-├── server.js                      # 用于开发环境的服务部署
-├── webpack.dev.config.js          # 用于开发环境的webpack配置
-├── webpack.dll.config.js          # 静态资源预编译所需webpack配置
-└── webpack.production.config.js   # 用于生产环境正式打包的webpack配置
+└── webpack.config.js              # 用于生产环境正式打包的webpack配置
 ```
 
 ## 参阅资料
